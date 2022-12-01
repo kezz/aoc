@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
+
 plugins {
     kotlin("jvm") version "1.7.22"
 }
@@ -7,13 +9,11 @@ repositories {
 }
 
 tasks {
-    sourceSets {
-        main {
-            java.srcDirs("src")
-        }
-    }
-
     wrapper {
         gradleVersion = "7.6"
     }
+}
+
+kotlin {
+    explicitApi = ExplicitApiMode.Strict
 }
