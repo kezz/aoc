@@ -1,4 +1,4 @@
-package day1
+package days
 
 import util.*
 
@@ -7,7 +7,6 @@ public fun main() {
 }
 
 public object Day1 : Day(1) {
-
     override fun part1(input: List<String>): Any = input
         .splitAroundBlankStrings()
         .mapInner(String::toInt)
@@ -21,5 +20,4 @@ public object Day1 : Day(1) {
         .sortedDescending()
         .take(3)
         .sum()
-
 }
