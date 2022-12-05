@@ -18,6 +18,10 @@ public fun List<String>.splitAroundBlankStrings(): Sequence<List<String>> = sequ
 public fun <I, O> Sequence<List<I>>.mapInner(transform: (I) -> O): Sequence<List<O>> =
     map { input -> input.map(transform) }
 
+/** Maps the inner contents of a sequence of lists. */
+public fun <I, O> Iterable<Iterable<I>>.mapInner(transform: (I) -> O): List<List<O>> =
+    map { input -> input.map(transform) }
+
 /** Prints and returns the receiver. */
 public fun <T> T.debug(): T =
     also(::println)
