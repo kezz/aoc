@@ -6,11 +6,15 @@ public fun List<String>.splitAroundBlankStrings(): Sequence<List<String>> = sequ
 
     this@splitAroundBlankStrings.forEach { value ->
         if (value.isBlank()) {
-            yield(tempList)
+            yield(tempList.toList())
             tempList.clear()
         } else {
             tempList.add(value)
         }
+    }
+
+    if (tempList.isNotEmpty()) {
+        yield(tempList)
     }
 }
 
