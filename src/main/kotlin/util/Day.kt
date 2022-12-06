@@ -32,8 +32,8 @@ public abstract class Day(private val day: Int) {
     }
 
     /** Part 1. */
-    public abstract fun part1(input: List<String>): Any
+    public abstract fun part1(input: List<String>): Any?
 
     /** Part 2. */
-    public abstract fun part2(input: List<String>): Any
+    public abstract fun part2(input: List<String>): Any?
 }

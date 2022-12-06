@@ -8,6 +8,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("io.arrow-kt:arrow-core:1.1.4-alpha.20")
+}
+
 tasks {
     wrapper {
         gradleVersion = "7.6"
