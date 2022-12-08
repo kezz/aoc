@@ -27,5 +27,5 @@ public fun <I, O> Iterable<Iterable<I>>.mapInner(transform: (I) -> O): List<List
     map { input -> input.map(transform) }
 
 /** Prints and returns the receiver. */
-public fun <T> T.debug(): T =
-    also(::println)
+public fun <T> T.debug(prefix: String = ""): T =
+    also { println("$prefix$this") }
