@@ -1,4 +1,4 @@
-package days
+package days.y23
 
 import util.Day
 import util.debug
@@ -8,7 +8,7 @@ public fun main() {
     Day4().run()
 }
 
-public class Day4 : Day(4) {
+public class Day4 : Day(23, 4) {
     override fun part1(input: List<String>): Any = input
         .map { line -> line.split(',') }
         .mapInner { assignment -> assignment.split('-') }

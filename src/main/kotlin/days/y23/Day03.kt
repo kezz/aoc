@@ -1,4 +1,4 @@
-package days
+package days.y23
 
 import util.Day
 import util.mapInner
@@ -7,7 +7,7 @@ public fun main() {
     Day3().run()
 }
 
-public class Day3 : Day(3) {
+public class Day3 : Day(23, 3) {
     override fun part1(input: List<String>): Any = input
         .asSequence()
         .map(String::toCharArray)

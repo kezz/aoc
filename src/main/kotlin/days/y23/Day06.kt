@@ -1,4 +1,4 @@
-package days
+package days.y23
 
 import arrow.core.Either
 import arrow.core.recover
@@ -8,15 +8,15 @@ public fun main() {
     Day6().run()
 }
 
-public class Day6 : Day(6) {
+public class Day6 : Day(23, 6) {
     override fun part1(input: List<String>): Any? = input
         .first()
         .foldIndexed<Either<List<Char>, Int>>(Either.Left(listOf())) { index, acc, char ->
             acc.recover { buffer ->
                 when {
-                    buffer.size < 4 -> shift(buffer.plus(char))
+                    buffer.size < 4 -> raise(buffer.plus(char))
                     buffer.distinct().size == 4 -> index
-                    else -> shift(buffer.drop(1).plus(char))
+                    else -> raise(buffer.drop(1).plus(char))
                 }
             }
         }
@@ -27,9 +27,9 @@ public class Day6 : Day(6) {
         .foldIndexed<Either<List<Char>, Int>>(Either.Left(listOf())) { index, acc, char ->
             acc.recover { buffer ->
                 when {
-                    buffer.size < 14 -> shift(buffer.plus(char))
+                    buffer.size < 14 -> raise(buffer.plus(char))
                     buffer.distinct().size == 14 -> index
-                    else -> shift(buffer.drop(1).plus(char))
+                    else -> raise(buffer.drop(1).plus(char))
                 }
             }
         }

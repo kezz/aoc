@@ -4,7 +4,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 /** A day. */
-public abstract class Day(private val day: Int) {
+public abstract class Day(private val year: Int, private val day: Int) {
 
     /** Runs the day. */
     public fun run(test: Boolean = false) {
@@ -12,7 +12,7 @@ public abstract class Day(private val day: Int) {
             require(part in 1..2)
 
             println("Running Day $day, Part $part...")
-            val input = Path("src", "main", "resources", "day$day${ if (test) { "_test" } else { "" } }.txt").readLines()
+            val input = Path("src", "main", "resources", "y$year", "day${day.toString().padStart(2, '0')}${ if (test) { "_test" } else { "" } }.txt").readLines()
 
             val expectedOutput = if (test) { input[input.size + (part - 3)] } else { null }
             val actualInput = if (test) { input.dropLast(2) } else { input }

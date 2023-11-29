@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
 
 plugins {
-    kotlin("jvm") version "1.7.22"
+    kotlin("jvm") version "2.0.0-Beta1"
 }
 
 repositories {
@@ -9,13 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.arrow-kt:arrow-core:1.1.4-alpha.20")
-}
-
-tasks {
-    wrapper {
-        gradleVersion = "7.6"
-    }
+    implementation("io.arrow-kt:arrow-core:1.2.0")
 }
 
 kotlin {

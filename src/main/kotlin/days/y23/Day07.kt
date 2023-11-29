@@ -1,4 +1,4 @@
-package days
+package days.y23
 
 import arrow.core.Either
 import arrow.core.Either.Left
@@ -9,7 +9,7 @@ public fun main() {
     Day07().run()
 }
 
-public class Day07 : Day(7) {
+public class Day07 : Day(23, 7) {
     override fun part1(input: List<String>): Any = input
         .mapNotNull { line ->
             when {
