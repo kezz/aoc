@@ -1,4 +1,4 @@
-package days.y23
+package days.y22
 
 import util.Day
 
@@ -6,7 +6,7 @@ public fun main() {
     Day2().run()
 }
 
-public class Day2 : Day(23, 2) {
+public class Day2 : Day(22, 2) {
     override fun part1(input: List<String>): Any = input
         .map { string -> string.filterNot(Char::isWhitespace).toCharArray() }
         .map { (opponentCode, playerCode) -> Pair(opponentCode.code - 64, playerCode.code - 87) }

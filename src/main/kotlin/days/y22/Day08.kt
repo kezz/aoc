@@ -1,4 +1,4 @@
-package days.y23
+package days.y22
 
 import util.Day
 
@@ -6,7 +6,7 @@ public fun main() {
     Day08().run()
 }
 
-public class Day08 : Day(23, 8) {
+public class Day08 : Day(22, 8) {
     override fun part1(input: List<String>): Any = input
         .mapIndexed { y, row ->
             row.mapIndexed { x, tree ->
