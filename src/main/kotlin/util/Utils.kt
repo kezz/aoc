@@ -26,6 +26,17 @@ public fun <I, O> Sequence<List<I>>.mapInner(transform: (I) -> O): Sequence<List
 public fun <I, O> Iterable<Iterable<I>>.mapInner(transform: (I) -> O): List<List<O>> =
     map { input -> input.map(transform) }
 
+/** Maps the inner contents of a sequence of lists. */
+@JvmName("mapInnerToSequence")
+public fun <I, O> Iterable<Sequence<I>>.mapInner(transform: (I) -> O): List<Sequence<O>> =
+    map { input -> input.map(transform) }
+
+/** Maps the inner contents of a sequence of lists. */
+@JvmName("mapInnerCharArray")
+public fun <O> Iterable<CharArray>.mapInner(transform: (Char) -> O): List<List<O>> =
+    map { input -> input.map(transform) }
+
+
 /** Prints and returns the receiver. */
 public fun <T> T.debug(prefix: String = ""): T =
     also { println("$prefix$this") }
